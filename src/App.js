@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Prueba from './Prueba.js'
 
 class App extends Component {
   render() {
+    
+
     return (
       <div className="App">
         
@@ -20,6 +23,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Prueba/>
         </header>
       </div>
     );

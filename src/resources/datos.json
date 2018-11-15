@@ -77,7 +77,7 @@
                      "OFPInstructionActions": {
                         "actions": [
                            {
-                              "OFPActionOutput": {simulate http traffic mininet
+                              "OFPActionOutput": {
                                  "len": 16, 
                                  "max_len": 65509, 
                                  "port": 1, 
