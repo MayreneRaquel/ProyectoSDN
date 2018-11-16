@@ -1,0 +1,27 @@
+.titulo {
+    font-size: 40px; 
+    font-weight: 300px;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.encabezado {
+    font-size: 50px; 
+    font-weight: 50px;
+    color: #ffffff; 
+    padding-top: 100px;
+    padding-right: 300px;
+    padding-bottom: 150px;
+    padding-left: 400px;
+    overflow: hidden; 
+    text-align: center;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    background: #fffbd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, rgb(156, 11, 11), #fffbd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, rgb(156, 11, 11), #fffbd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.texto {
+    font-size: 17px; 
+    font-weight: 15px;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
