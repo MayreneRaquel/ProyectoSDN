@@ -4,12 +4,15 @@ import './CSS/Tabla.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
 class Tabla extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+        };    
 	}
     
     render() {
-
+        const { datos } = this.state;
 
         return (
             <div className="container-fluid">

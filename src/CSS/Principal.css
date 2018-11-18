@@ -1,0 +1,45 @@
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 550px
+}
+
+/* Barra izquierda */
+.sidenav {
+  background-color: rgb(64, 64, 78);
+  color: white;
+  height: 100%;
+ }
+
+/* Secciones de la barra izquierda */
+.nav > li > a {
+  color: white;
+  font-size: 20px;
+}
+
+/* Columnitas */
+.well {
+  color: white;
+  background-color: rgb(49, 179, 202)
+}
+
+/* Fondo del container */
+.container-fluid {
+  background-color: rgb(45, 45, 51);
+}
+
+/* Texto de las etiquetas "p" */
+.pi {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .row.content {height: auto;} 
+}
+
+/* Encabezado de la pagina */
+.jumbotron {
+  background-color: rgb(64, 64, 78);
+  color: white;
+  padding: 80px;
+  margin-bottom: 1px
+}
