@@ -14,25 +14,6 @@ class Principal extends Component {
         };   
 	}
 
-    constructor() {
-        super();
-        this.leerDatosMonitor = this.leerDatosMonitor.bind(this);
-
-        this.state = {
-            datosJ : null,
-        };
-	}
-
-    /* 
-    https://carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/ 
-    https://davidwalsh.name/fetch 
-    https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data/
-    https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-    https://www.robinwieruch.de/react-fetching-data/
-    https://stackoverflow.com/questions/47417217/where-to-declare-variable-in-react-js
-    https://addons.mozilla.org/en-US/firefox/addon/react-devtools/     
-    */
-
     componentDidMount(){
         this.leerDatosMonitor();        
     }
@@ -50,8 +31,7 @@ class Principal extends Component {
         }).catch(err => {
             // Do something for an error here
             console.error('Error:', err);
-        });        
-        }); 
+        });         
     }
 
     render() {
@@ -142,19 +122,6 @@ class Principal extends Component {
                                     </div>
                                 </div>
                             </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <h3>Column 1</h3>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                        <div className="col-sm-4">
-                            <h3>Column 2</h3>
-                            <p>Lorem ipsum dolor..</p>
-                        </div>
-                        <div className="col-sm-4">
-                            <h3>Column 3</h3>
-                            <p>Lorem ipsum dolor..</p>
                         </div>
                     </div>
                 </div>
