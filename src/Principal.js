@@ -46,7 +46,6 @@ class Principal extends Component {
                     <h1>Visualizador de trafico de red</h1>
                     <p className="pi">Recopila informacion de interes para el administrador de red.</p>
                 </div>
-
                 <div>
                     <nav className="navbar visible-xs">
                         <div className="container-fluid">
