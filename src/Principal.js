@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
-import {datosJson} from './resources/datos.json'
-import './CSS/Principal.css'
+import {datosJson} from './resources/datos.json';
+import './CSS/Principal.css';
+import './Tabla.js'
 import 'bootstrap/dist/css/bootstrap.css';
+import Tabla from './Tabla.js';
 
 class Principal extends Component {
+    constructor(props) {
+        super(props);
 
-    constructor() {
-        super();
         this.leerDatosMonitor = this.leerDatosMonitor.bind(this);
-        
         this.state = {
-            datosJ : null,
+            datosJ : []
         };   
 	}
 
@@ -20,26 +21,30 @@ class Principal extends Component {
     
     leerDatosMonitor(){
         // Replace ./data.json with your JSON feed
-        fetch('http://localhost:8080/datos.json').then(response => {
+        fetch('http://localhost:8080/datos.json')
+        .then(response => {
             return response.json();
-        }).then(data => {
-            // Work with JSON data here
+        })
+        .then(data => { // Work with JSON data here
             this.setState(state => ({
                 datosJ: data
             }));
             console.log(data);
-        }).catch(err => {
-            // Do something for an error here
+        })
+        .catch(err => { // Do something for an error here
             console.error('Error:', err);
         });         
     }
 
     render() {
+        /* parse(text: string, reviver?: (key: any, value: any) => any): any */
+
         return(
             <div>
                 <link href="CSS/Principal.css" rel="stylesheet" type="text/css"/>
                 <div className="jumbotron text-center">
                     <h1>Visualizador de trafico de red</h1>
+                    <p className="pi">Recopila informacion de interes para el administrador de red.</p>
                 </div>
 
                 <div>
@@ -56,8 +61,8 @@ class Principal extends Component {
                             <div className="collapse navbar-collapse" id="myNavbar">
                                 <ul className="nav navbar-nav">
                                     <li className="active"><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Age</a></li>
-                                    <li><a href="#">Gender</a></li>
+                                    <li><a href="#">Tabla</a></li>
+                                    <li><a href="#">Grafica</a></li>
                                     <li><a href="#">Geo</a></li>
                                 </ul>
                             </div>
@@ -70,16 +75,17 @@ class Principal extends Component {
                                 <h1></h1>
                                 <ul className="nav flex-column">
                                     <li className="active"><a href="#section1">Dashboard</a></li>
-                                    <li><a href="#section2">Age</a></li>
-                                    <li><a href="#section3">Gender</a></li>
-                                    <li><a href="#section3">Geo</a></li>
+                                    <li><a href="#section2">Trafico</a></li>
+                                    <li><a href="#section3">Tablas</a></li>
+                                    <li><a href="#section3">Grafica</a></li>
                                 </ul>
                             </div>
                             
-                            <div className="col-sm-9">
-                                <div className="well">
-                                    <h1>Dashboard</h1>
-                                    <p className="pi">Recopila informacion de interes para el administrador de red.</p>
+                            <div className="col-sm-8">
+                                <div className="row">
+                                    <div className="col-sm-12">
+                                        <h1></h1>
+                                    </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-sm-3">
@@ -118,6 +124,7 @@ class Principal extends Component {
                                     <div className="col-sm-12">
                                         <div className="well">
                                             <h1>Tabla</h1>
+                                            <Tabla/>
                                         </div>
                                     </div>
                                 </div>
