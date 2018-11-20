@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {datosJson} from './resources/datos.json'
-import './CSS/Principal.css'
+import './CSS/Principal.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import Tabla from './Tabla';
 
 class Principal extends Component {
 
@@ -41,7 +42,6 @@ class Principal extends Component {
                 <div className="jumbotron text-center">
                     <h1>Visualizador de trafico de red</h1>
                 </div>
-
                 <div>
                     <nav className="navbar visible-xs">
                         <div className="container-fluid">
@@ -118,6 +118,7 @@ class Principal extends Component {
                                     <div className="col-sm-12">
                                         <div className="well">
                                             <h1>Tabla</h1>
+                                            <Tabla/>
                                         </div>
                                     </div>
                                 </div>
