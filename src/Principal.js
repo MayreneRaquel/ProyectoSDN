@@ -109,7 +109,7 @@ class Principal extends Component {
                                     <div className="col-sm-3">
                                         <div className="well">
                                             <h1>Bounce</h1>
-                                            <p className="pi">30%</p> 
+                                            <p className="pi">60%</p> 
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ class Principal extends Component {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <div className="well">
-                                            <h1>Tabla</h1>
+                                            <h1>Tabla de direcciones</h1>
                                             <Tabla/>
                                         </div>
                                     </div>

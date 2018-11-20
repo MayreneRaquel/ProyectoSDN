@@ -20,7 +20,7 @@ class Tabla extends Component {
             text: 'Categoria'
           }, {
             dataField: 'name',
-            text: 'Direccion IP'
+            text: 'Direccion IPv4'
           }, {
             dataField: 'price',
             text: 'Cantidad de flujo'
