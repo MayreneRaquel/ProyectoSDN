@@ -8,15 +8,17 @@ import Tabla from './Tabla.js';
 class Principal extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            error: null,
+            cargado: false,
+            datosJ : []
+        };
 
         this.leerDatosMonitor = this.leerDatosMonitor.bind(this);
-        this.state = {
-            datosJ : []
-        };   
 	}
 
     componentDidMount(){
-        this.leerDatosMonitor();        
+        this.leerDatosMonitor()    
     }
     
     leerDatosMonitor(){
@@ -25,19 +27,31 @@ class Principal extends Component {
         .then(response => {
             return response.json();
         })
-        .then(data => { // Work with JSON data here
-            this.setState(state => ({
-                datosJ: data
-            }));
-            console.log(data);
-        })
-        .catch(err => { // Do something for an error here
-            console.error('Error:', err);
-        });         
+        .then(
+            (data) => { // Work with JSON data here
+                this.setState({
+                    cargado:true,
+                    datosJ: data.OFPFlowStatsReply,
+                });
+            },
+            (error) => {
+                this.setState({
+                    cargado:true,
+                    error
+                });
+            })       
     }
+
 
     render() {
         /* parse(text: string, reviver?: (key: any, value: any) => any): any */
+        if(this.state.error){
+            console.log('error')
+        } else if (!(this.state.cargado)){
+            console.log('cargando datos json...')
+        } else{
+            console.log(this.state.datosJ)
+        }  
 
         return(
             <div>
@@ -50,7 +64,7 @@ class Principal extends Component {
                     <nav className="navbar visible-xs">
                         <div className="container-fluid">
                             <div className="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>                        
@@ -123,7 +137,9 @@ class Principal extends Component {
                                     <div className="col-sm-12">
                                         <div className="well">
                                             <h1>Tabla de direcciones</h1>
-                                            <Tabla/>
+                                                <Tabla 
+                                                    datosTabla={this.state.datosJ}
+                                                />
                                         </div>
                                     </div>
                                 </div>

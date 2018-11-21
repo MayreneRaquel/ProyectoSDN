@@ -20,10 +20,10 @@ class Tabla extends Component {
             text: 'Categoria'
           }, {
             dataField: 'name',
-            text: 'Direccion IPv4'
+            text: 'Direccion IPv4 SRC'
           }, {
             dataField: 'price',
-            text: 'Cantidad de flujo'
+            text: 'Direccion IPv4 DST'
           }];
           
         const rows = [{
@@ -39,6 +39,9 @@ class Tabla extends Component {
             name: 'Book',
             'price': 20
         }];
+
+        var filas = []
+        
 
         return (
             <div className="container">
